@@ -4,10 +4,11 @@ import com.haui.blog_app.dto.PostDto;
 import com.haui.blog_app.form.PostCreateForm;
 import com.haui.blog_app.form.PostUpdateForm;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface PostService {
-    List<PostDto> findAll();
+    Page<PostDto> findAll(Pageable pageable);
 
     PostDto findById(Long id);
 

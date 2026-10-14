@@ -1,4 +1,4 @@
-package com.haui.blog_app.PostRepository;
+package com.haui.blog_app.Repository;
 
 import com.haui.blog_app.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
