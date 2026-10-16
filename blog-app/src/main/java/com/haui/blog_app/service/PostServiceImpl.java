@@ -33,9 +33,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDto create(PostCreateForm form) {
-        var post = PostMapper.map(form);
+        var post = modelMapper.map(form, Post.class);
         var savedPost = postRepository.save(post);
-        return PostMapper.map(savedPost);
+        return modelMapper.map(savedPost, PostDto.class);
     }
 
     @Override
@@ -45,9 +45,9 @@ public class PostServiceImpl implements PostService {
             return null;
         }
         var post = optional.get();
-        PostMapper.map(form, post);
+        modelMapper.map(form, post);
         var savedPost = postRepository.save(post);
-        return PostMapper.map(savedPost);
+        return modelMapper.map(savedPost, PostDto.class);
     }
 
     @Override
